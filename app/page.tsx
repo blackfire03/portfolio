@@ -1,11 +1,15 @@
 import { Scrollytelling } from "@/components/Scrollytelling";
+import { HeroInfo } from "@/components/HeroInfo";
 import { Projects } from "@/components/Projects";
+import { Contact } from "@/components/Contact";
 
 export default function Home() {
     return (
-        <main className="min-h-screen bg-[#121212]">
+        <main className="min-h-screen bg-[#000000]">
             <Scrollytelling />
+            <HeroInfo />
             <Projects />
+            <Contact />
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24">
@@ -18,6 +22,7 @@ export default function Home() {
                         <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
                     </div>
                     <div className="flex gap-6">
+                        <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
                         <a href="#" className="hover:text-white transition-colors">Twitter</a>
                         <a href="https://www.linkedin.com/in/hitarth-nayak-268316304/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
                         <a href="https://github.com/blackfire03" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
