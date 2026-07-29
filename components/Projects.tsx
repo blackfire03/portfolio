@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
 
 const PROJECTS = [
     {
@@ -32,49 +31,54 @@ const PROJECTS = [
 
 export function Projects() {
     return (
-        <section className="relative z-20 bg-[#121212] min-h-screen py-32 px-6 md:px-12 lg:px-24">
+        <section className="relative z-20 bg-[#08090d] py-20 md:py-24 px-6 md:px-12 lg:px-24 border-b border-white/5">
             <div className="max-w-7xl mx-auto">
-
+                {/* Header Block */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8 }}
-                    className="mb-20"
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="mb-12 md:mb-14 text-left"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+                    <span className="block text-[13px] font-semibold text-[#9a9ba3] tracking-[0.14em] uppercase mb-3">
+                        EXPERIENCE
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
                         Experience & Work
                     </h2>
-                    <p className="text-xl text-zinc-400 max-w-2xl font-light">
+                    <p className="text-base md:text-lg text-[#9a9ba3] font-light max-w-2xl">
                         My professional journey in design and business development.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {PROJECTS.map((project, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 25 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            className={`group relative rounded-2xl p-px bg-gradient-to-b ${project.color} ${project.glow} transition-all duration-500`}
+                            transition={{
+                                duration: 0.6,
+                                delay: i * 0.1,
+                                ease: [0.22, 1, 0.36, 1],
+                            }}
+                            className={`group relative rounded-[20px] p-px bg-gradient-to-b ${project.color} ${project.glow} transition-all duration-500`}
                         >
                             {/* Card Inner */}
-                            <div className={`relative h-full bg-[#121212]/80 backdrop-blur-xl rounded-[15px] p-8 border ${project.border} flex flex-col transition-colors duration-500 group-hover:bg-[#1a1a1a]/80`}>
-
-
-
-                                <h3 className="text-2xl font-semibold text-white mb-3">
+                            <div className={`relative h-full bg-[#12131a]/90 backdrop-blur-xl rounded-[19px] p-7 md:p-8 border ${project.border} flex flex-col transition-colors duration-500 group-hover:bg-[#171822]`}>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#9d8cff] transition-colors">
                                     {project.title}
                                 </h3>
 
-                                <p className="text-zinc-400 font-light mb-8 flex-grow">
+                                <p className="text-[#9a9ba3] font-light text-sm md:text-base leading-relaxed mb-6 flex-grow">
                                     {project.description}
                                 </p>
 
-                                <div className="mt-auto">
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                <div className="mt-auto pt-2">
+                                    <div className="flex flex-wrap gap-2">
                                         {project.tags.map((tag, j) => (
                                             <span
                                                 key={j}
@@ -85,12 +89,10 @@ export function Projects() {
                                         ))}
                                     </div>
                                 </div>
-
                             </div>
                         </motion.div>
                     ))}
                 </div>
-
             </div>
         </section>
     );

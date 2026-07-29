@@ -13,20 +13,27 @@ export function Scrollytelling() {
     // Preload images
     useEffect(() => {
         const loadedImages: HTMLImageElement[] = [];
-        let loadedCount = 0;
 
         for (let i = 0; i < FRAME_COUNT; i++) {
             const img = new Image();
             const frameNum = i.toString().padStart(3, "0");
             img.src = `/sequence/frame_${frameNum}_delay-0.066s.webp`;
-            img.onload = () => {
-                loadedCount++;
-                if (loadedCount === FRAME_COUNT) {
+
+            const onImageLoad = () => {
+                // Render frame 0 immediately as soon as the first image finishes loading
+                if (i === 0 || loadedImages[0]?.complete) {
                     if (canvasRef.current) {
-                        renderFrame(0);
+                        drawFrame(Math.floor(frameIndex.get()), loadedImages);
                     }
                 }
             };
+
+            if (img.complete) {
+                onImageLoad();
+            } else {
+                img.onload = onImageLoad;
+            }
+
             loadedImages.push(img);
         }
         setImages(loadedImages);
@@ -41,21 +48,25 @@ export function Scrollytelling() {
 
     useMotionValueEvent(frameIndex, "change", (latest) => {
         if (images.length > 0) {
-            renderFrame(Math.floor(latest));
+            drawFrame(Math.floor(latest), images);
         }
     });
 
-    const renderFrame = (index: number) => {
-        if (!images[index] || !canvasRef.current) return;
+    const drawFrame = (index: number, imgList: HTMLImageElement[]) => {
+        if (!canvasRef.current) return;
+
+        // Fallback to frame 0 if the target frame isn't loaded yet
+        let img = imgList[index];
+        if (!img || !img.complete) {
+            img = imgList[0];
+        }
+        if (!img || !img.complete) return;
 
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        const img = images[index];
-
         // Canvas dimensions have been scaled by devicePixelRatio for sharpness
-        // We adjust drawing dimensions accordingly
         const canvasRatio = canvas.width / canvas.height;
         const imgRatio = img.width / img.height;
 
@@ -86,7 +97,7 @@ export function Scrollytelling() {
                 canvasRef.current.width = window.innerWidth * dpr;
                 canvasRef.current.height = window.innerHeight * dpr;
 
-                renderFrame(Math.floor(frameIndex.get()));
+                drawFrame(Math.floor(frameIndex.get()), images);
             }
         };
 

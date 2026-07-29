@@ -1,5 +1,7 @@
 import { Scrollytelling } from "@/components/Scrollytelling";
 import { HeroInfo } from "@/components/HeroInfo";
+import { Skills } from "@/components/Skills";
+import { Qualifications } from "@/components/Qualifications";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 
@@ -8,6 +10,8 @@ export default function Home() {
         <main className="min-h-screen bg-[#000000]">
             <Scrollytelling />
             <HeroInfo />
+            <Skills />
+            <Qualifications />
             <Projects />
             <Contact />
 
