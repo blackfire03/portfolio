@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 30 },
@@ -52,7 +53,11 @@ export default function SocialMediaCreatives() {
                     >
                         {/* Card 1 */}
                         <motion.div variants={fadeIn} className="group">
-                            <Link href="/work/ochre-and-oak" className="block">
+                            <Link 
+                                href="/work/ochre-and-oak" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="block"
+                            >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#092701]">
                                     <Image 
                                         src="/work/ochre-oak/card_thumbnail.jpg"
@@ -69,14 +74,22 @@ export default function SocialMediaCreatives() {
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 A 7-day Instagram content calendar plus a recurring brand mascot for a minimal specialty coffee café.
                             </p>
-                            <Link href="/work/ochre-and-oak" className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all">
+                            <Link 
+                                href="/work/ochre-and-oak" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Case Study
                             </Link>
                         </motion.div>
 
                         {/* Card 2 */}
                         <motion.div variants={fadeIn} className="group">
-                            <Link href="/work/veyra" className="block">
+                            <Link 
+                                href="/work/veyra" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="block"
+                            >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#ece8dc]">
                                     <Image 
                                         src="/work/veyra/logo.jpg"
@@ -93,7 +106,11 @@ export default function SocialMediaCreatives() {
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 A 7-day Instagram content calendar for a minimal clean skincare brand positioned as &apos;quiet luxury&apos;.
                             </p>
-                            <Link href="/work/veyra" className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all">
+                            <Link 
+                                href="/work/veyra" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Case Study
                             </Link>
                         </motion.div>

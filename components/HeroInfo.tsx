@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowUpRight, ArrowRight, Lock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export function HeroInfo() {
     const [time, setTime] = useState<Date | null>(null);
@@ -102,13 +103,19 @@ export function HeroInfo() {
                         <div className="flex items-center gap-4">
                             <button 
                                 onClick={() => {
+                                    sendGAEvent("event", "cta_work_together");
                                     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                                 }}
                                 className="bg-white text-black px-6 py-2.5 rounded-full text-[0.9rem] font-bold hover:bg-zinc-200 transition-all cursor-pointer"
                             >
                                 Let&apos;s Work Together
                             </button>
-                            <button className="text-zinc-400 border border-white/10 hover:border-white/20 hover:text-white px-6 py-2.5 rounded-full text-[0.9rem] font-medium transition-all flex items-center gap-2">
+                            <button 
+                                onClick={() => {
+                                    sendGAEvent("event", "cta_view_all_work");
+                                }}
+                                className="text-zinc-400 border border-white/10 hover:border-white/20 hover:text-white px-6 py-2.5 rounded-full text-[0.9rem] font-medium transition-all flex items-center gap-2 cursor-pointer"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View All Work
                             </button>
                         </div>
@@ -133,14 +140,22 @@ export function HeroInfo() {
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Turning complex ideas into simple, elegant websites built for usability and impact.
                             </p>
-                            <Link href="/work/website-design-projects" className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all">
+                            <Link 
+                                href="/work/website-design-projects" 
+                                onClick={() => sendGAEvent("event", "cta_view_projects")}
+                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects
                             </Link>
                         </div>
 
                         {/* Case Study 2 */}
                         <div className="group">
-                            <Link href="/work/social-media-creatives" className="block">
+                            <Link 
+                                href="/work/social-media-creatives" 
+                                onClick={() => sendGAEvent("event", "cta_view_projects")}
+                                className="block"
+                            >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#004aac]">
                                     <Image 
                                         src="/social_media_creatives.jpg"
@@ -157,7 +172,11 @@ export function HeroInfo() {
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Scroll-stopping single posts and carousels designed to inform, engage, and build brand presence.
                             </p>
-                            <Link href="/work/social-media-creatives" className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all">
+                            <Link 
+                                href="/work/social-media-creatives" 
+                                onClick={() => sendGAEvent("event", "cta_view_projects")}
+                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects
                             </Link>
                         </div>

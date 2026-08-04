@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 30 },
@@ -52,7 +53,11 @@ export default function WebsiteDesignProjects() {
                     >
                         {/* Card 1 */}
                         <motion.div variants={fadeIn} className="group">
-                            <Link href="/work/quacks-bakery" className="block">
+                            <Link 
+                                href="/work/quacks-bakery" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="block"
+                            >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#004aac]">
                                     <Image 
                                         src="/work/website-design-projects/quacks.jpg"
@@ -69,14 +74,22 @@ export default function WebsiteDesignProjects() {
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 From a broken map and a raw Instagram feed to a story driven site... gave Quack's a homepage worthy of its 'Best of Austin' reputation.
                             </p>
-                            <Link href="/work/quacks-bakery" className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all">
+                            <Link 
+                                href="/work/quacks-bakery" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Case Study
                             </Link>
                         </motion.div>
 
                         {/* Card 2 */}
                         <motion.div variants={fadeIn} className="group">
-                            <Link href="/work/bloody-rose" className="block">
+                            <Link 
+                                href="/work/bloody-rose" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="block"
+                            >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#ffffff]">
                                     <Image 
                                         src="/work/website-design-projects/bloody-rose.jpg"
@@ -92,14 +105,22 @@ export default function WebsiteDesignProjects() {
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Turning a generic Shopify storefront into a moody, brand-true experience for Austin's home for alternative fashion.
                             </p>
-                            <Link href="/work/bloody-rose" className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all">
+                            <Link 
+                                href="/work/bloody-rose" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Case Study
                             </Link>
                         </motion.div>
 
                         {/* Card 3 */}
                         <motion.div variants={fadeIn} className="group">
-                            <Link href="/work/leafora" className="block">
+                            <Link 
+                                href="/work/leafora" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="block"
+                            >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#edeae3]">
                                     <Image 
                                         src="/work/website-design-projects/leafora.jpg"
@@ -115,7 +136,11 @@ export default function WebsiteDesignProjects() {
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Designed from a single client brief: premium, calm, and earthy — without a single cliché.
                             </p>
-                            <Link href="/work/leafora" className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all">
+                            <Link 
+                                href="/work/leafora" 
+                                onClick={() => sendGAEvent("event", "cta_view_case_study")}
+                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
+                            >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Case Study
                             </Link>
                         </motion.div>
