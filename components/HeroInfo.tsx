@@ -110,14 +110,15 @@ export function HeroInfo() {
                             >
                                 Let&apos;s Work Together
                             </button>
-                            <button 
+                            <Link 
+                                href="/work"
                                 onClick={() => {
                                     sendGAEvent("event", "cta_view_all_work");
                                 }}
                                 className="text-zinc-400 border border-white/10 hover:border-white/20 hover:text-white px-6 py-2.5 rounded-full text-[0.9rem] font-medium transition-all flex items-center gap-2 cursor-pointer"
                             >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View All Work
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -125,18 +126,24 @@ export function HeroInfo() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                         {/* Case Study 1: Website Design Projects */}
                         <div className="group">
-                            <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#0a0a0a]">
-                                <Image 
-                                    src="/website_design_projects.jpg"
-                                    alt="Website Design Projects"
-                                    fill
-                                    className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                                    priority
-                                />
-                            </div>
-                            <h3 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
-                                Website Design Projects
-                            </h3>
+                            <Link 
+                                href="/work/website-design-projects" 
+                                onClick={() => sendGAEvent("event", "cta_view_projects")}
+                                className="block"
+                            >
+                                <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#edeae4]">
+                                    <Image 
+                                        src="/website-design-cover.png"
+                                        alt="Website Design Projects"
+                                        fill
+                                        className="object-contain group-hover:scale-105 transition-all duration-700"
+                                        priority
+                                    />
+                                </div>
+                                <h3 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
+                                    Website Design Projects
+                                </h3>
+                            </Link>
                             <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Turning complex ideas into simple, elegant websites built for usability and impact.
                             </p>
@@ -156,12 +163,12 @@ export function HeroInfo() {
                                 onClick={() => sendGAEvent("event", "cta_view_projects")}
                                 className="block"
                             >
-                                <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#004aac]">
+                                <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#f1ede4]">
                                     <Image 
-                                        src="/social_media_creatives.jpg"
+                                        src="/social-media-creatives-cover.png"
                                         alt="Social Media Creatives"
                                         fill
-                                        className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                                        className="object-contain group-hover:scale-105 transition-all duration-700"
                                         priority
                                     />
                                 </div>
