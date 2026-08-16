@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Hitarth's Portfolio",
     description: "High-end scrollytelling personal portfolio website.",
+    verification: {
+        google: "1eEiP4zrb_008VHCwBqDeClXn1p71Briuggwg77i_go",
+    },
     icons: {
         icon: [
             { url: "/favicon.ico", sizes: "any" },
