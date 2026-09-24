@@ -166,7 +166,7 @@ export function Contact() {
                         className="space-y-8"
                     >
                         {/* Eyebrow label */}
-                        <span className="block text-[13px] font-semibold text-[#6f707a] tracking-[0.12em] uppercase">
+                        <span className="block text-[13px] font-semibold text-[#8c8d99] tracking-[0.12em] uppercase">
                             Why reach out
                         </span>
 
@@ -344,7 +344,7 @@ export function Contact() {
                                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                         className={`w-full bg-[#15171f] border ${isDropdownOpen ? "border-[#9d8cff]" : "border-white/10"} rounded-[10px] px-4 py-3.5 text-[15px] flex items-center justify-between transition-colors text-left focus:outline-none`}
                                     >
-                                        <span className={workType ? "text-white" : "text-[#555761]"}>
+                                        <span className={workType ? "text-white" : "text-[#8c8d99]"}>
                                             {workType || "Select an option"}
                                         </span>
                                         <ChevronDown className={`w-4 h-4 text-[#9a9ba3] transition-transform duration-200 ${isDropdownOpen ? "rotate-180 text-[#9d8cff]" : ""}`} />
@@ -383,7 +383,7 @@ export function Contact() {
                                 </div>
 
                                 {/* Footnote */}
-                                <p className="text-center text-[12.5px] text-[#6f707a] font-normal pt-1">
+                                <p className="text-center text-[12.5px] text-[#8c8d99] font-normal pt-1">
                                     Your details are only used to get back to you — never shared.
                                 </p>
                             </form>

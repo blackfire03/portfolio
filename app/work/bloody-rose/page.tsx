@@ -118,8 +118,8 @@ export default function BloodyRoseCaseStudy() {
                     <Link href="/work/website-design-projects" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 rotate-180" /> Back to Case Studies
                     </Link>
-                    <div className="text-sm font-medium text-zinc-500 hidden sm:block">
-                        Case Studies <span className="mx-2">/</span> <span className="text-zinc-300">Bloody Rose Boutique</span>
+                    <div className="text-sm font-medium text-zinc-400 hidden sm:block">
+                        Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Bloody Rose Boutique</span>
                     </div>
                 </motion.div>
 
@@ -155,9 +155,9 @@ export default function BloodyRoseCaseStudy() {
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="space-y-1">
                                         <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider">Before</span>
-                                        <h3 className="text-xl font-semibold text-white group-hover:text-rose-400 transition-colors">
+                                        <h2 className="text-xl font-semibold text-white group-hover:text-rose-400 transition-colors">
                                             Old Storefront
-                                        </h3>
+                                        </h2>
                                     </div>
                                     <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-400 group-hover:text-rose-400 group-hover:border-rose-500/30 transition-all">
                                         <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -181,9 +181,9 @@ export default function BloodyRoseCaseStudy() {
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="space-y-1">
                                         <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider">After</span>
-                                        <h3 className="text-xl font-semibold text-white group-hover:text-rose-300 transition-colors flex items-center gap-2">
+                                        <h2 className="text-xl font-semibold text-white group-hover:text-rose-300 transition-colors flex items-center gap-2">
                                             Bloody Rose 2.0 (Redesign)
-                                        </h3>
+                                        </h2>
                                     </div>
                                     <div className="p-2.5 rounded-xl bg-rose-500/20 border border-rose-500/30 text-rose-300 group-hover:bg-rose-500 group-hover:text-white transition-all">
                                         <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -257,7 +257,7 @@ export default function BloodyRoseCaseStudy() {
                                         <span className="font-medium text-zinc-200">{item.criteria}</span>
                                         <div className="flex items-center gap-3 text-xs font-mono">
                                             <span className="text-rose-400/80 font-semibold">Before: {item.before}/10</span>
-                                            <span className="text-zinc-600">|</span>
+                                            <span className="text-zinc-400" aria-hidden="true">|</span>
                                             <span className="text-rose-400 font-semibold">After: {item.after}/10</span>
                                         </div>
                                     </div>
@@ -414,13 +414,13 @@ export default function BloodyRoseCaseStudy() {
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full mt-20">
-                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm font-light">
+                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© {new Date().getFullYear()} Hitarth. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

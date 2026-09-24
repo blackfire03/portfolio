@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@/lib/analytics";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 30 },
@@ -38,13 +38,13 @@ export default function SocialMediaCreatives() {
                         <Link href="/work" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                             <ArrowRight className="w-4 h-4 rotate-180" /> All Work
                         </Link>
-                        <span className="text-zinc-600">|</span>
+                        <span className="text-zinc-400" aria-hidden="true">|</span>
                         <Link href="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
                             Home
                         </Link>
                     </div>
-                    <div className="text-sm font-medium text-zinc-500">
-                        Case Studies <span className="mx-2">/</span> <span className="text-zinc-300">Social Media Creatives</span>
+                    <div className="text-sm font-medium text-zinc-400">
+                        Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Social Media Creatives</span>
                     </div>
                 </motion.div>
 
@@ -84,21 +84,22 @@ export default function SocialMediaCreatives() {
                                     <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#092701]">
                                         <Image 
                                             src="/work/ochre-oak/card_thumbnail.jpg"
-                                            alt="Ochre & Oak — Café Social Media Content & Mascot Design"
+                                            alt="Ochre & Oak café social media design and mascot portfolio preview"
                                             fill
                                             className="object-contain p-3 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                             priority
                                         />
                                     </div>
-                                    <h3 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
+                                    <h2 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
                                         Ochre & Oak — Café Social Media Content & Mascot Design
-                                    </h3>
+                                    </h2>
                                 </Link>
-                                <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
+                                <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                     A 7-day Instagram content calendar plus a recurring brand mascot for a minimal specialty coffee café.
                                 </p>
                                 <Link 
                                     href="/work/ochre-and-oak" 
+                                    aria-label="View Ochre & Oak Case Study"
                                     onClick={() => sendGAEvent("event", "cta_view_case_study")}
                                     className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
                                 >
@@ -116,21 +117,22 @@ export default function SocialMediaCreatives() {
                                     <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#ece8dc]">
                                         <Image 
                                             src="/work/veyra/logo.jpg"
-                                            alt="Veyra — Skincare Brand & Social Media Content Design"
+                                            alt="Veyra skincare brand identity and social media design portfolio preview"
                                             fill
                                             className="object-contain p-4 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                             priority
                                         />
                                     </div>
-                                    <h3 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
+                                    <h2 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
                                         Veyra — Skincare Brand & Social Media Content Design
-                                    </h3>
+                                    </h2>
                                 </Link>
-                                <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
+                                <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                     A 7-day Instagram content calendar for a minimal clean skincare brand positioned as &apos;quiet luxury&apos;.
                                 </p>
                                 <Link 
                                     href="/work/veyra" 
+                                    aria-label="View Veyra Case Study"
                                     onClick={() => sendGAEvent("event", "cta_view_case_study")}
                                     className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
                                 >
@@ -144,13 +146,13 @@ export default function SocialMediaCreatives() {
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full">
-                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm font-light">
+                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© {new Date().getFullYear()} Hitarth. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

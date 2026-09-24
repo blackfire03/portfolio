@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@/lib/analytics";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 30 },
@@ -61,8 +61,8 @@ export default function AllWorkPage() {
                     <Link href="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
                         Back to Homepage
                     </Link>
-                    <div className="text-sm font-medium text-zinc-500">
-                        Portfolio <span className="mx-2">/</span> <span className="text-zinc-300">All Work</span>
+                    <div className="text-sm font-medium text-zinc-400">
+                        Portfolio <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">All Work</span>
                     </div>
                 </motion.div>
 
@@ -104,7 +104,7 @@ export default function AllWorkPage() {
                                         <div className={`relative aspect-[16/11] overflow-hidden rounded-xl mb-6 ${category.bgClass}`}>
                                             <Image 
                                                 src={category.image}
-                                                alt={category.title}
+                                                alt={`${category.title} portfolio cover`}
                                                 fill
                                                 className="object-contain group-hover:scale-105 transition-all duration-700"
                                                 priority={index === 0}
@@ -114,7 +114,7 @@ export default function AllWorkPage() {
                                             {category.title}
                                         </h2>
                                     </Link>
-                                    <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
+                                    <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                         {category.description}
                                     </p>
                                 </div>
@@ -122,6 +122,7 @@ export default function AllWorkPage() {
                                     <Link 
                                         href={category.href} 
                                         onClick={() => sendGAEvent("event", "cta_view_projects")}
+                                        aria-label={`View ${category.title}`}
                                         className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
                                     >
                                         <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects
@@ -135,13 +136,13 @@ export default function AllWorkPage() {
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full mt-20">
-                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm font-light">
+                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© {new Date().getFullYear()} Hitarth. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

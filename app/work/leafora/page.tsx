@@ -107,8 +107,8 @@ export default function LeaforaCaseStudy() {
                     <Link href="/work/website-design-projects" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 rotate-180" /> Back to Case Studies
                     </Link>
-                    <div className="text-sm font-medium text-zinc-500 hidden sm:block">
-                        Case Studies <span className="mx-2">/</span> <span className="text-zinc-300">Leafora</span>
+                    <div className="text-sm font-medium text-zinc-400 hidden sm:block">
+                        Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Leafora</span>
                     </div>
                 </motion.div>
 
@@ -145,14 +145,14 @@ export default function LeaforaCaseStudy() {
                                         <span className="text-xs font-semibold text-orange-400 uppercase tracking-wider">Interactive Live Preview</span>
                                         <span className="px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-300 text-[0.7rem] font-mono">Kinfolk / Aesop Style</span>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white group-hover:text-orange-300 transition-colors">
+                                    <h2 className="text-2xl font-bold text-white group-hover:text-orange-300 transition-colors">
                                         View Live Design
-                                    </h3>
+                                    </h2>
                                     <p className="text-sm text-zinc-300 font-light max-w-xl leading-relaxed">
                                         Experience the full 6-section editorial desktop homepage built with quiet serif typography and warm earthy tones.
                                     </p>
                                 </div>
-                                <div className="p-3.5 rounded-xl bg-orange-600 text-white group-hover:bg-orange-500 transition-all shrink-0 flex items-center gap-2 font-medium text-sm">
+                                <div className="p-3.5 rounded-xl bg-[#c2410c] text-white group-hover:bg-orange-600 transition-all shrink-0 flex items-center gap-2 font-medium text-sm">
                                     <span>Explore Site</span>
                                     <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                 </div>
@@ -357,7 +357,7 @@ export default function LeaforaCaseStudy() {
                                 href="https://leafora-editorial-bloom.lovable.app/" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange-600 text-white font-semibold hover:bg-orange-500 transition-colors shadow-[0_0_20px_rgba(234,88,12,0.3)]"
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#c2410c] text-white font-semibold hover:bg-orange-600 transition-colors shadow-[0_0_20px_rgba(234,88,12,0.3)]"
                             >
                                 Experience Leafora Design Live <ArrowUpRight className="w-4 h-4" />
                             </a>
@@ -375,13 +375,13 @@ export default function LeaforaCaseStudy() {
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full mt-20">
-                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm font-light">
+                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© {new Date().getFullYear()} Hitarth. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

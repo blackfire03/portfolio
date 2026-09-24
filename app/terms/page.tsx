@@ -4,13 +4,13 @@ export default function TermsAndConditions() {
   return (
     <main className="min-h-screen bg-[#121212] text-zinc-300 py-16 px-6 md:px-12 lg:px-24 font-light">
       <div className="max-w-3xl mx-auto">
-        <Link href="/" className="text-zinc-500 hover:text-white transition-colors mb-12 flex flex-row items-center gap-2 w-fit">
+        <Link href="/" className="text-zinc-400 hover:text-white transition-colors mb-12 flex flex-row items-center gap-2 w-fit">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           Back to Home
         </Link>
         
         <h1 className="text-4xl text-white font-medium mb-4">Terms and Conditions</h1>
-        <p className="text-zinc-500 mb-12">Last updated: March 17, 2026</p>
+        <p className="text-zinc-400 mb-12">Last updated: March 17, 2026</p>
 
         <div className="space-y-12 leading-relaxed">
           {/* Interpretation and Definitions */}

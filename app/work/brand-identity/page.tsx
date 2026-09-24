@@ -36,13 +36,13 @@ export default function BrandIdentityProjects() {
                         <Link href="/work" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                             <ArrowRight className="w-4 h-4 rotate-180" /> All Work
                         </Link>
-                        <span className="text-zinc-600">|</span>
+                        <span className="text-zinc-400" aria-hidden="true">|</span>
                         <Link href="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
                             Home
                         </Link>
                     </div>
-                    <div className="text-sm font-medium text-zinc-500">
-                        Case Studies <span className="mx-2">/</span> <span className="text-zinc-300">Brand Identity Projects</span>
+                    <div className="text-sm font-medium text-zinc-400">
+                        Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Brand Identity Projects</span>
                     </div>
                 </motion.div>
 
@@ -105,13 +105,13 @@ export default function BrandIdentityProjects() {
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full mt-20">
-                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm font-light">
+                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© {new Date().getFullYear()} Hitarth. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

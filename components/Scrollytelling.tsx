@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useScroll, useTransform, useMotionValueEvent, motion } from "framer-motion";
+import Image from "next/image";
 
 const FRAME_COUNT = 120; // 0 to 119
 
@@ -9,18 +10,22 @@ export function Scrollytelling() {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [images, setImages] = useState<HTMLImageElement[]>([]);
+    const rafIdRef = useRef<number | null>(null);
+    const latestFrameRef = useRef<number>(0);
 
-    // Preload images
+    // Eagerly preload all frames in memory for smooth, lag-free scroll playback
     useEffect(() => {
         const loadedImages: HTMLImageElement[] = [];
+        let isCancelled = false;
 
         for (let i = 0; i < FRAME_COUNT; i++) {
-            const img = new Image();
+            const img = new window.Image();
             const frameNum = i.toString().padStart(3, "0");
             img.src = `/sequence/frame_${frameNum}_delay-0.066s.webp`;
 
             const onImageLoad = () => {
-                // Render frame 0 immediately as soon as the first image finishes loading
+                if (isCancelled) return;
+                // Render initial frame immediately once loaded
                 if (i === 0 || loadedImages[0]?.complete) {
                     if (canvasRef.current) {
                         drawFrame(Math.floor(frameIndex.get()), loadedImages);
@@ -37,6 +42,13 @@ export function Scrollytelling() {
             loadedImages.push(img);
         }
         setImages(loadedImages);
+
+        return () => {
+            isCancelled = true;
+            if (rafIdRef.current !== null) {
+                cancelAnimationFrame(rafIdRef.current);
+            }
+        };
     }, []);
 
     const { scrollYProgress } = useScroll({
@@ -46,17 +58,33 @@ export function Scrollytelling() {
 
     const frameIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
 
+    // Throttle frame draws to requestAnimationFrame for 60fps/120fps smooth playback without dropping frames
     useMotionValueEvent(frameIndex, "change", (latest) => {
-        if (images.length > 0) {
-            drawFrame(Math.floor(latest), images);
+        latestFrameRef.current = Math.floor(latest);
+
+        if (rafIdRef.current === null) {
+            rafIdRef.current = requestAnimationFrame(() => {
+                if (images.length > 0) {
+                    drawFrame(latestFrameRef.current, images);
+                }
+                rafIdRef.current = null;
+            });
         }
     });
 
     const drawFrame = (index: number, imgList: HTMLImageElement[]) => {
         if (!canvasRef.current) return;
 
-        // Fallback to frame 0 if the target frame isn't loaded yet
+        // Find the target frame, or smoothly fallback to the closest loaded previous frame, or frame 0
         let img = imgList[index];
+        if (!img || !img.complete) {
+            for (let k = index - 1; k >= 0; k--) {
+                if (imgList[k]?.complete) {
+                    img = imgList[k];
+                    break;
+                }
+            }
+        }
         if (!img || !img.complete) {
             img = imgList[0];
         }
@@ -121,11 +149,20 @@ export function Scrollytelling() {
         <div ref={containerRef} className="relative h-[500vh] w-full bg-[#121212]">
             <div className="sticky top-0 h-screen w-full overflow-hidden">
 
-                {/* Canvas Background */}
+                {/* Hero Visual: Next.js Image with priority for instant mobile LCP + Canvas overlay */}
                 <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/sequence/frame_000_delay-0.066s.webp"
+                        alt="Hitarth Nayak - UI/UX & Graphic Designer"
+                        fill
+                        priority
+                        sizes="100vw"
+                        quality={80}
+                        className="object-cover pointer-events-none"
+                    />
                     <canvas
                         ref={canvasRef}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover relative z-10"
                         style={{
                             width: "100%",
                             height: "100%"

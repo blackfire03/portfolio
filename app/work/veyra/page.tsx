@@ -132,11 +132,11 @@ export default function VeyraCaseStudy() {
                     <Link href="/work/social-media-creatives" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
                         ← Back to Social Media Creatives
                     </Link>
-                    <div className="text-sm font-medium text-zinc-500 hidden md:block">
-                        <Link href="/" className="hover:text-zinc-300 transition-colors">Homepage</Link>
-                        <span className="mx-2">/</span>
-                        <Link href="/work/social-media-creatives" className="hover:text-zinc-300 transition-colors">Social Media Creatives</Link>
-                        <span className="mx-2">/</span>
+                    <div className="text-sm font-medium text-zinc-400 hidden md:block">
+                        <Link href="/" className="text-zinc-400 hover:text-zinc-300 transition-colors">Homepage</Link>
+                        <span className="mx-2 text-zinc-400" aria-hidden="true">/</span>
+                        <Link href="/work/social-media-creatives" className="text-zinc-400 hover:text-zinc-300 transition-colors">Social Media Creatives</Link>
+                        <span className="mx-2 text-zinc-400" aria-hidden="true">/</span>
                         <span className="text-[#849b87]">Veyra</span>
                     </div>
                 </motion.div>
@@ -168,21 +168,21 @@ export default function VeyraCaseStudy() {
                         className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-2xl bg-zinc-950 border border-white/10"
                     >
                         <div>
-                            <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-1">Client</span>
+                            <span className="text-xs text-zinc-400 uppercase tracking-wider block mb-1">Client</span>
                             <span className="text-sm font-medium text-zinc-200">Fictional Client Project</span>
                         </div>
                         <div>
-                            <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-1">Industry</span>
+                            <span className="text-xs text-zinc-400 uppercase tracking-wider block mb-1">Industry</span>
                             <span className="text-sm font-medium text-zinc-200">Beauty & Skincare</span>
                         </div>
                         <div>
-                            <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-1 flex items-center gap-1">
+                            <span className="text-xs text-zinc-400 uppercase tracking-wider block mb-1 flex items-center gap-1">
                                 <Wrench className="w-3 h-3 text-[#849b87]" /> Tools Used
                             </span>
                             <span className="text-sm font-medium text-zinc-200">Canva</span>
                         </div>
                         <div>
-                            <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-1 flex items-center gap-1">
+                            <span className="text-xs text-zinc-400 uppercase tracking-wider block mb-1 flex items-center gap-1">
                                 <User className="w-3 h-3 text-[#849b87]" /> Role
                             </span>
                             <span className="text-sm font-medium text-zinc-200">Solo designer & content creator</span>
@@ -404,7 +404,7 @@ export default function VeyraCaseStudy() {
                         <div className="relative aspect-[4/5] rounded-2xl bg-[#7a8a6d] border border-[#849b87]/30 overflow-hidden">
                             <Image 
                                 src="/work/veyra/logo_section.jpg"
-                                alt="Veyra Logo"
+                                alt="Veyra skincare brand abstract line-drawn logo and packaging design preview"
                                 fill
                                 className="object-cover"
                                 priority
@@ -547,13 +547,13 @@ export default function VeyraCaseStudy() {
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full mt-20">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm font-light">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© {new Date().getFullYear()} Hitarth. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

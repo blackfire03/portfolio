@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Lock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@/lib/analytics";
 
 export function HeroInfo() {
     const [time, setTime] = useState<Date | null>(null);
@@ -79,16 +79,16 @@ export function HeroInfo() {
             >
                 {/* Header Section */}
                 <div className="max-w-4xl">
-                    <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tight leading-[1.1] text-white">
+                    <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tight leading-[1.1] text-white">
                         UI/UX & Graphic Designer<br />
                         based in India
-                    </h1>
+                    </h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end mt-20 md:mt-0">
                     {/* Bio Section (Bottom Left) */}
                     <div className="max-w-md">
-                        <div className="text-[0.85rem] text-zinc-500 mb-4 font-medium flex items-center gap-2">
+                        <div className="text-[0.85rem] text-zinc-400 mb-4 font-medium flex items-center gap-2">
                             <span className={isOnline() ? "text-[#4ade80]" : "text-red-500"}>
                                 ({isOnline() ? "Online" : "Offline"})
                             </span>
@@ -134,22 +134,23 @@ export function HeroInfo() {
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#edeae4]">
                                     <Image 
                                         src="/website-design-cover.png"
-                                        alt="Website Design Projects"
+                                        alt="Website design projects portfolio cover preview"
                                         fill
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                         className="object-contain group-hover:scale-105 transition-all duration-700"
-                                        priority
                                     />
                                 </div>
                                 <h3 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
                                     Website Design Projects
                                 </h3>
                             </Link>
-                            <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
+                            <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Turning complex ideas into simple, elegant websites built for usability and impact.
                             </p>
                             <Link 
                                 href="/work/website-design-projects" 
                                 onClick={() => sendGAEvent("event", "cta_view_projects")}
+                                aria-label="View Website Design Projects"
                                 className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
                             >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects
@@ -166,22 +167,23 @@ export function HeroInfo() {
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#f1ede4]">
                                     <Image 
                                         src="/social-media-creatives-cover.png"
-                                        alt="Social Media Creatives"
+                                        alt="Social media creative projects portfolio cover preview"
                                         fill
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                         className="object-contain group-hover:scale-105 transition-all duration-700"
-                                        priority
                                     />
                                 </div>
                                 <h3 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
                                     Social Media Creatives
                                 </h3>
                             </Link>
-                            <p className="text-zinc-500 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
+                            <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Scroll-stopping single posts and carousels designed to inform, engage, and build brand presence.
                             </p>
                             <Link 
                                 href="/work/social-media-creatives" 
                                 onClick={() => sendGAEvent("event", "cta_view_projects")}
+                                aria-label="View Social Media Creatives Projects"
                                 className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
                             >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects

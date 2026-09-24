@@ -101,7 +101,7 @@ export function Qualifications() {
                                             <p className="text-base md:text-lg text-[#9a9ba3] font-medium leading-relaxed">
                                                 {item.institution}
                                             </p>
-                                            <p className="text-xs md:text-sm text-[#6f707a] font-normal tracking-wide">
+                                            <p className="text-xs md:text-sm text-[#8c8d99] font-normal tracking-wide">
                                                 {item.meta}
                                             </p>
                                         </div>
@@ -136,12 +136,11 @@ export function Qualifications() {
                                 className="relative w-full h-full"
                             >
                                 <Image
-                                    src="/graduation_cap_graphic.png"
-                                    alt="Graduation Cap 3D Graphic"
+                                    src="/graduation_cap_graphic.webp"
+                                    alt="3D graduation cap graphic illustrating educational qualifications"
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 360px"
                                     className="object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]"
-                                    priority
                                 />
                             </motion.div>
                         </div>

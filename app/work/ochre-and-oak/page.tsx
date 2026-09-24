@@ -253,8 +253,8 @@ export default function OchreAndOakCaseStudy() {
                     <Link href="/work/social-media-creatives" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 rotate-180" /> Back to Case Studies
                     </Link>
-                    <div className="text-sm font-medium text-zinc-500 hidden sm:block">
-                        Case Studies <span className="mx-2">/</span> <Link href="/work/social-media-creatives" className="hover:text-zinc-300 transition-colors">Social Media Creatives</Link> <span className="mx-2">/</span> <span className="text-zinc-300">Ochre & Oak</span>
+                    <div className="text-sm font-medium text-zinc-400 hidden sm:block">
+                        Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <Link href="/work/social-media-creatives" className="text-zinc-400 hover:text-zinc-300 transition-colors">Social Media Creatives</Link> <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Ochre & Oak</span>
                     </div>
                 </motion.div>
 
@@ -322,7 +322,7 @@ export default function OchreAndOakCaseStudy() {
                                     <BarChart3 className="w-6 h-6 text-[#c85a32]" />
                                     How the content measures up against the brief
                                 </h2>
-                                <p className="text-xs text-zinc-500 mt-1 italic">
+                                <p className="text-xs text-zinc-400 mt-1 italic">
                                     Subjective self-assessment against brief requirements (1–10 scale)
                                 </p>
                             </div>
@@ -539,7 +539,7 @@ export default function OchreAndOakCaseStudy() {
                         <div className="relative aspect-[4/5] rounded-2xl bg-[#092701] border border-[#c85a32]/30 overflow-hidden">
                             <Image 
                                 src="/work/ochre-oak/mascot.jpg"
-                                alt="Ochre & Oak Mascot"
+                                alt="Ochre & Oak Café illustrated coffee cup mascot design"
                                 fill
                                 className="object-cover"
                                 priority
@@ -700,13 +700,13 @@ export default function OchreAndOakCaseStudy() {
 
             {/* 13. Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full mt-20">
-                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm font-light">
+                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© {new Date().getFullYear()} Hitarth. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <span className="hidden md:inline text-white/20">|</span>
-                        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/craftedbyhitarth/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

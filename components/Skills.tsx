@@ -15,37 +15,37 @@ const SKILL_TOOLS: SkillTool[] = [
         name: "Adobe Illustrator",
         level: "Advanced",
         filledBars: 3,
-        icon: "/logos/illustrator.png",
+        icon: "/logos/illustrator.webp",
     },
     {
         name: "Adobe Photoshop",
         level: "Advanced",
         filledBars: 3,
-        icon: "/logos/photoshop.png",
+        icon: "/logos/photoshop.webp",
     },
     {
         name: "Figma",
         level: "Advanced",
         filledBars: 3,
-        icon: "/logos/figma.png",
+        icon: "/logos/figma.webp",
     },
     {
         name: "Canva",
         level: "Advanced",
         filledBars: 3,
-        icon: "/logos/canva.png",
+        icon: "/logos/canva.webp",
     },
     {
         name: "Adobe After Effects",
         level: "Beginner",
         filledBars: 1,
-        icon: "/logos/after-effects.png",
+        icon: "/logos/after-effects.webp",
     },
     {
         name: "Adobe InDesign",
         level: "Intermediate",
         filledBars: 2,
-        icon: "/logos/indesign.png",
+        icon: "/logos/indesign.webp",
     },
 ];
 
@@ -90,11 +90,10 @@ export function Skills() {
                                 <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-[14px] overflow-hidden shrink-0 bg-[#1a1b24] shadow-md border border-white/5 group-hover:scale-105 transition-transform duration-300">
                                     <Image
                                         src={tool.icon}
-                                        alt={tool.name}
+                                        alt={`${tool.name} logo`}
                                         fill
                                         sizes="(max-width: 768px) 48px, 56px"
                                         className="object-cover"
-                                        priority={index < 4}
                                     />
                                 </div>
 
