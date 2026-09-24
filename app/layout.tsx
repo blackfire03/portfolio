@@ -16,6 +16,21 @@ export const metadata: Metadata = {
     },
 };
 
+const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Hitarth Nayak",
+    jobTitle: "UI/UX & Graphic Designer",
+    url: "https://craftedbyhitarth.vercel.app",
+    sameAs: [
+        "https://www.linkedin.com/in/hitarth-nayak-268316304/",
+        "https://www.instagram.com/craftedbyhitarth/",
+        "https://x.com/crafthitarth03",
+        "https://github.com/blackfire03",
+        "https://craftedbyhitarth.vercel.app",
+    ],
+};
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -35,6 +50,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     }}
                 />
                 {/* End Google Tag Manager */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(personJsonLd),
+                    }}
+                />
                 <link rel="icon" href="/favicon.ico" sizes="any" />
                 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
