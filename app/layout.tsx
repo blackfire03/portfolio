@@ -23,7 +23,7 @@ const personJsonLd = {
     jobTitle: "UI/UX & Graphic Designer",
     url: "https://craftedbyhitarth.vercel.app",
     sameAs: [
-        "https://www.linkedin.com/in/hitarth-nayak-268316304/",
+        "https://in.linkedin.com/in/hitarth-n-268316304",
         "https://www.instagram.com/craftedbyhitarth/",
         "https://x.com/crafthitarth03",
         "https://github.com/blackfire03",
