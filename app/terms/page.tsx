@@ -1,4 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Terms and Conditions — Hitarth Nayak",
+    description: "Terms and conditions governing the use of Hitarth Nayak's portfolio website and design services.",
+    alternates: {
+        canonical: "https://craftedbyhitarth.vercel.app/terms",
+    },
+    openGraph: {
+        title: "Terms and Conditions — Hitarth Nayak",
+        description: "Terms and conditions governing the use of Hitarth Nayak's portfolio website and design services.",
+        url: "https://craftedbyhitarth.vercel.app/terms",
+        images: [
+            {
+                url: "/opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Hitarth Nayak - UI/UX & Graphic Designer",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Terms and Conditions — Hitarth Nayak",
+        description: "Terms and conditions governing the use of Hitarth Nayak's portfolio website and design services.",
+        images: ["/opengraph-image.png"],
+        creator: "@crafthitarth03",
+    },
+};
 
 export default function TermsAndConditions() {
   return (

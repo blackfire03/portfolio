@@ -1,4 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy — Hitarth Nayak",
+    description: "Privacy policy for Hitarth Nayak's portfolio website, detailing how personal data and contact inquiries are collected, used, and protected.",
+    alternates: {
+        canonical: "https://craftedbyhitarth.vercel.app/privacy-policy",
+    },
+    openGraph: {
+        title: "Privacy Policy — Hitarth Nayak",
+        description: "Privacy policy for Hitarth Nayak's portfolio website, detailing how personal data and contact inquiries are collected, used, and protected.",
+        url: "https://craftedbyhitarth.vercel.app/privacy-policy",
+        images: [
+            {
+                url: "/opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Hitarth Nayak - UI/UX & Graphic Designer",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Privacy Policy — Hitarth Nayak",
+        description: "Privacy policy for Hitarth Nayak's portfolio website, detailing how personal data and contact inquiries are collected, used, and protected.",
+        images: ["/opengraph-image.png"],
+        creator: "@crafthitarth03",
+    },
+};
 
 export default function PrivacyPolicy() {
   return (

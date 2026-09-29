@@ -6,12 +6,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://craftedbyhitarth.vercel.app"),
-    title: "Hitarth's Portfolio",
-    description: "High-end scrollytelling personal portfolio website.",
+    title: "Hitarth Nayak — UI/UX & Graphic Designer",
+    description: "Portfolio of Hitarth Nayak, a UI/UX and graphic designer specializing in accessible digital experiences, design systems, and brand identities.",
+    alternates: {
+        canonical: "https://craftedbyhitarth.vercel.app/",
+    },
     openGraph: {
         title: "Hitarth Nayak — UI/UX & Graphic Designer",
-        description: "High-end scrollytelling personal portfolio website.",
-        url: "https://craftedbyhitarth.vercel.app",
+        description: "Portfolio of Hitarth Nayak, a UI/UX and graphic designer specializing in accessible digital experiences, design systems, and brand identities.",
+        url: "https://craftedbyhitarth.vercel.app/",
         siteName: "Hitarth Nayak Portfolio",
         images: [
             {
@@ -27,7 +30,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Hitarth Nayak — UI/UX & Graphic Designer",
-        description: "High-end scrollytelling personal portfolio website.",
+        description: "Portfolio of Hitarth Nayak, a UI/UX and graphic designer specializing in accessible digital experiences, design systems, and brand identities.",
         images: ["/opengraph-image.png"],
         creator: "@crafthitarth03",
     },
