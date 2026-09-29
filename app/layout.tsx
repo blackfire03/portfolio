@@ -5,8 +5,32 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://craftedbyhitarth.vercel.app"),
     title: "Hitarth's Portfolio",
     description: "High-end scrollytelling personal portfolio website.",
+    openGraph: {
+        title: "Hitarth Nayak — UI/UX & Graphic Designer",
+        description: "High-end scrollytelling personal portfolio website.",
+        url: "https://craftedbyhitarth.vercel.app",
+        siteName: "Hitarth Nayak Portfolio",
+        images: [
+            {
+                url: "/opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Hitarth Nayak - UI/UX & Graphic Designer",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Hitarth Nayak — UI/UX & Graphic Designer",
+        description: "High-end scrollytelling personal portfolio website.",
+        images: ["/opengraph-image.png"],
+        creator: "@crafthitarth03",
+    },
     icons: {
         icon: [
             { url: "/favicon.ico", sizes: "any" },
