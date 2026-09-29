@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Archivo } from "next/font/google";
+import { CurtainLoader } from "@/components/tds/curtain-loader/CurtainLoader";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({
+    subsets: ["latin"],
+    axes: ["wdth"],
+    variable: "--tds-display",
+});
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://craftedbyhitarth.vercel.app"),
@@ -84,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             </head>
-            <body className={`${inter.className} bg-[#121212] text-white antialiased`}>
+            <body className={`${inter.className} ${archivo.variable} bg-[#121212] text-white antialiased`}>
                 {/* Google Tag Manager (noscript) */}
                 <noscript>
                     <iframe
@@ -95,7 +101,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     />
                 </noscript>
                 {/* End Google Tag Manager (noscript) */}
-                {children}
+                <CurtainLoader>
+                    {children}
+                </CurtainLoader>
             </body>
         </html>
     );
