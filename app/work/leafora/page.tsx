@@ -107,9 +107,9 @@ export default function LeaforaCaseStudy() {
                     <Link href="/work/website-design-projects" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 rotate-180" /> Back to Case Studies
                     </Link>
-                    <div className="text-sm font-medium text-zinc-400 hidden sm:block">
+                    <nav aria-label="Breadcrumb" className="text-sm font-medium text-zinc-400 hidden sm:block">
                         Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Leafora</span>
-                    </div>
+                    </nav>
                 </motion.div>
 
                 {/* Hero Header & Link */}
@@ -369,6 +369,16 @@ export default function LeaforaCaseStudy() {
                             </Link>
                         </div>
                     </motion.div>
+
+                    {/* Bottom Contextual Navigation */}
+                    <div className="pt-8 border-t border-white/10 flex justify-start text-sm">
+                        <Link
+                            href="/work/bloody-rose"
+                            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 font-medium"
+                        >
+                            <ArrowRight className="w-4 h-4 rotate-180" /> Previous: Bloody Rose Boutique
+                        </Link>
+                    </div>
 
                 </section>
             </div>

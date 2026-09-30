@@ -416,6 +416,7 @@ export function Contact() {
                             {/* Close Button */}
                             <button
                                 onClick={() => setModalState("none")}
+                                aria-label="Close"
                                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#1c1e2b] border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
                             >
                                 <X className="w-5 h-5" />

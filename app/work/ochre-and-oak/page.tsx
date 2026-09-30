@@ -267,9 +267,9 @@ export default function OchreAndOakCaseStudy() {
                     <Link href="/work/social-media-creatives" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 rotate-180" /> Back to Case Studies
                     </Link>
-                    <div className="text-sm font-medium text-zinc-400 hidden sm:block">
+                    <nav aria-label="Breadcrumb" className="text-sm font-medium text-zinc-400 hidden sm:block">
                         Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <Link href="/work/social-media-creatives" className="text-zinc-400 hover:text-zinc-300 transition-colors">Social Media Creatives</Link> <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Ochre & Oak</span>
-                    </div>
+                    </nav>
                 </motion.div>
 
                 {/* 1. Header Section */}
@@ -466,6 +466,7 @@ export default function OchreAndOakCaseStudy() {
                                                             onClick={(e) => handlePrevSlide(card.day, e)}
                                                             className="w-7 h-7 rounded-full bg-black/70 border border-white/20 flex items-center justify-center text-white hover:bg-[#c85a32] transition-colors"
                                                             title="Previous slide"
+                                                            aria-label="Previous slide"
                                                         >
                                                             <ChevronLeft className="w-4 h-4" />
                                                         </button>
@@ -476,6 +477,7 @@ export default function OchreAndOakCaseStudy() {
                                                             onClick={(e) => handleNextSlide(card.day, e)}
                                                             className="w-7 h-7 rounded-full bg-black/70 border border-white/20 flex items-center justify-center text-white hover:bg-[#c85a32] transition-colors"
                                                             title="Next slide"
+                                                            aria-label="Next slide"
                                                         >
                                                             <ChevronRight className="w-4 h-4" />
                                                         </button>
@@ -625,6 +627,22 @@ export default function OchreAndOakCaseStudy() {
                         </p>
                     </motion.div>
 
+                    {/* Bottom Contextual Navigation */}
+                    <div className="pt-8 border-t border-white/10 flex items-center justify-between text-sm">
+                        <Link
+                            href="/work/social-media-creatives"
+                            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
+                        >
+                            <ArrowRight className="w-4 h-4 rotate-180" /> Back to Social Media Creatives
+                        </Link>
+                        <Link
+                            href="/work/veyra"
+                            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 font-medium"
+                        >
+                            Next Project: Veyra <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </div>
+
                 </section>
             </div>
 
@@ -648,6 +666,7 @@ export default function OchreAndOakCaseStudy() {
                             {/* Close Button */}
                             <button 
                                 onClick={() => setActiveLightboxDay(null)}
+                                aria-label="Close enlarged preview"
                                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900 border border-white/20 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
                             >
                                 <X className="w-5 h-5" />
@@ -687,12 +706,14 @@ export default function OchreAndOakCaseStudy() {
                                     <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between items-center pointer-events-none">
                                         <button 
                                             onClick={(e) => handlePrevSlide(currentLightboxData.day, e)}
+                                            aria-label="Previous image"
                                             className="pointer-events-auto w-10 h-10 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-[#c85a32] transition-colors shadow-lg"
                                         >
                                             <ChevronLeft className="w-5 h-5" />
                                         </button>
                                         <button 
                                             onClick={(e) => handleNextSlide(currentLightboxData.day, e)}
+                                            aria-label="Next image"
                                             className="pointer-events-auto w-10 h-10 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white hover:bg-[#c85a32] transition-colors shadow-lg"
                                         >
                                             <ChevronRight className="w-5 h-5" />

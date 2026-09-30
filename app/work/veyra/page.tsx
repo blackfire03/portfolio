@@ -139,13 +139,13 @@ export default function VeyraCaseStudy() {
                     <Link href="/work/social-media-creatives" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
                         ← Back to Social Media Creatives
                     </Link>
-                    <div className="text-sm font-medium text-zinc-400 hidden md:block">
+                    <nav aria-label="Breadcrumb" className="text-sm font-medium text-zinc-400 hidden md:block">
                         <Link href="/" className="text-zinc-400 hover:text-zinc-300 transition-colors">Homepage</Link>
                         <span className="mx-2 text-zinc-400" aria-hidden="true">/</span>
                         <Link href="/work/social-media-creatives" className="text-zinc-400 hover:text-zinc-300 transition-colors">Social Media Creatives</Link>
                         <span className="mx-2 text-zinc-400" aria-hidden="true">/</span>
                         <span className="text-[#849b87]">Veyra</span>
-                    </div>
+                    </nav>
                 </motion.div>
 
                 {/* Hero / Header Section */}
@@ -483,6 +483,22 @@ export default function VeyraCaseStudy() {
                         </p>
                     </motion.div>
 
+                    {/* Bottom Contextual Navigation */}
+                    <div className="pt-8 border-t border-white/10 flex items-center justify-between text-sm">
+                        <Link
+                            href="/work/social-media-creatives"
+                            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
+                        >
+                            <ArrowRight className="w-4 h-4 rotate-180" /> Back to Social Media Creatives
+                        </Link>
+                        <Link
+                            href="/work/ochre-and-oak"
+                            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 font-medium"
+                        >
+                            <ArrowRight className="w-4 h-4 rotate-180" /> Previous Project: Ochre & Oak
+                        </Link>
+                    </div>
+
                 </section>
             </div>
 
@@ -506,6 +522,7 @@ export default function VeyraCaseStudy() {
                             {/* Close Button */}
                             <button 
                                 onClick={() => setActiveLightboxDay(null)}
+                                aria-label="Close enlarged preview"
                                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900 border border-white/20 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
                             >
                                 <X className="w-5 h-5" />

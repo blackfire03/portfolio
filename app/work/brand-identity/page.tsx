@@ -41,9 +41,9 @@ export default function BrandIdentityProjects() {
                             Home
                         </Link>
                     </div>
-                    <div className="text-sm font-medium text-zinc-400">
+                    <nav aria-label="Breadcrumb" className="text-sm font-medium text-zinc-400">
                         Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Brand Identity Projects</span>
-                    </div>
+                    </nav>
                 </motion.div>
 
                 {/* Header & Placeholder Section */}
@@ -63,6 +63,24 @@ export default function BrandIdentityProjects() {
                             </h1>
                             <p className="text-lg md:text-xl text-zinc-400 font-light leading-relaxed">
                                 Building cohesive brand identities — logos, color systems, and visual guidelines that stick.
+                            </p>
+                        </motion.div>
+
+                        {/* Methodology / Context Note */}
+                        <motion.div variants={fadeIn} className="max-w-3xl space-y-3 text-zinc-400 font-light text-base leading-relaxed">
+                            <p>
+                                Brand identity work across this portfolio focuses on creating unified visual systems from foundational marks to real-world touchpoints. Each identity pairs distinct logo marks and custom typography with deliberate color palettes, packaging details, and practical layout guidelines.
+                            </p>
+                            <p>
+                                Relevant visual identity and brand system applications are featured in the{" "}
+                                <Link href="/work/veyra" className="text-white hover:text-purple-300 underline underline-offset-4 transition-colors font-normal">
+                                    Veyra skincare packaging &amp; identity system
+                                </Link>{" "}
+                                and the{" "}
+                                <Link href="/work/ochre-and-oak" className="text-white hover:text-purple-300 underline underline-offset-4 transition-colors font-normal">
+                                    Ochre &amp; Oak café mascot &amp; brand creatives
+                                </Link>{" "}
+                                case studies.
                             </p>
                         </motion.div>
 

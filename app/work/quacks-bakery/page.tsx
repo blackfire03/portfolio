@@ -114,9 +114,9 @@ export default function QuacksCaseStudy() {
                     <Link href="/work/website-design-projects" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 rotate-180" /> Back to Case Studies
                     </Link>
-                    <div className="text-sm font-medium text-zinc-400 hidden sm:block">
+                    <nav aria-label="Breadcrumb" className="text-sm font-medium text-zinc-400 hidden sm:block">
                         Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Quack's 43rd Street Bakery</span>
-                    </div>
+                    </nav>
                 </motion.div>
 
                 {/* Hero Header & Links */}
@@ -151,9 +151,9 @@ export default function QuacksCaseStudy() {
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="space-y-1">
                                         <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider">Before</span>
-                                        <h2 className="text-xl font-semibold text-white group-hover:text-amber-400 transition-colors">
+                                        <h3 className="text-xl font-semibold text-white group-hover:text-amber-400 transition-colors">
                                             Legacy Site
-                                        </h2>
+                                        </h3>
                                     </div>
                                     <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-zinc-400 group-hover:text-amber-400 group-hover:border-amber-500/30 transition-all">
                                         <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -177,9 +177,9 @@ export default function QuacksCaseStudy() {
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="space-y-1">
                                         <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider">After</span>
-                                        <h2 className="text-xl font-semibold text-white group-hover:text-amber-300 transition-colors flex items-center gap-2">
+                                        <h3 className="text-xl font-semibold text-white group-hover:text-amber-300 transition-colors flex items-center gap-2">
                                             Quack's 2.0 (Redesign)
-                                        </h2>
+                                        </h3>
                                     </div>
                                     <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-300 group-hover:bg-amber-500 group-hover:text-black transition-all">
                                         <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -402,6 +402,16 @@ export default function QuacksCaseStudy() {
                             </Link>
                         </div>
                     </motion.div>
+
+                    {/* Bottom Contextual Navigation */}
+                    <div className="pt-8 border-t border-white/10 flex justify-end text-sm">
+                        <Link
+                            href="/work/bloody-rose"
+                            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 font-medium"
+                        >
+                            Next Project: Bloody Rose Boutique <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </div>
 
                 </section>
             </div>

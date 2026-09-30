@@ -89,9 +89,9 @@ export default function AllWorkPage() {
                     <Link href="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
                         Back to Homepage
                     </Link>
-                    <div className="text-sm font-medium text-zinc-400">
+                    <nav aria-label="Breadcrumb" className="text-sm font-medium text-zinc-400">
                         Portfolio <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">All Work</span>
-                    </div>
+                    </nav>
                 </motion.div>
 
                 {/* Main Content Section */}
@@ -150,7 +150,7 @@ export default function AllWorkPage() {
                                     <Link 
                                         href={category.href} 
                                         onClick={() => sendGAEvent("event", "cta_view_projects")}
-                                        aria-label={`View ${category.title}`}
+                                        aria-label={`Explore ${category.title}`}
                                         className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
                                     >
                                         <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects

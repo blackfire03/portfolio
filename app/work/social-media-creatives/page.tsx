@@ -43,9 +43,9 @@ export default function SocialMediaCreatives() {
                             Home
                         </Link>
                     </div>
-                    <div className="text-sm font-medium text-zinc-400">
+                    <nav aria-label="Breadcrumb" className="text-sm font-medium text-zinc-400">
                         Case Studies <span className="mx-2 text-zinc-400" aria-hidden="true">/</span> <span className="text-zinc-300">Social Media Creatives</span>
-                    </div>
+                    </nav>
                 </motion.div>
 
                 {/* Main Content Section */}
