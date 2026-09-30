@@ -5,7 +5,7 @@ import { HeroInfo } from "@/components/HeroInfo";
 import { Skills } from "@/components/Skills";
 import { Qualifications } from "@/components/Qualifications";
 import { Projects } from "@/components/Projects";
-import { Contact } from "@/components/Contact";
+import { ContactCTA } from "@/components/ContactCTA";
 
 export const metadata: Metadata = {
     title: "Hitarth Nayak — UI/UX & Graphic Designer",
@@ -43,7 +43,7 @@ export default function Home() {
             <Skills />
             <Qualifications />
             <Projects />
-            <Contact />
+            <ContactCTA />
 
             {/* Footer */}
             <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24">
