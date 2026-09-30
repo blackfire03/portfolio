@@ -39,6 +39,7 @@ const GRID_DAYS_DATA = [
         title: "Day 1 — Brand Intro",
         imageSrc: "/work/veyra/day1.jpg",
         label: "Day 1 — Brand Intro",
+        alt: "Veyra minimalist brand introduction post with skincare bottle on neutral background",
         caption: "Brand intro post — the product centered on soft cream with generous negative space, letting the headline 'Skincare, Simplified' and the product carry the entire first impression."
     },
     {
@@ -46,6 +47,7 @@ const GRID_DAYS_DATA = [
         title: "Day 2 — Conviction Split",
         imageSrc: "/work/veyra/day2.jpg",
         label: "Day 2 — Conviction Split",
+        alt: "Sage and cream split-screen ad with conviction statement 'Fewer Ingredients. Visible Difference.'",
         caption: "A hard color-block ad-style split introducing the product's conviction: 'Fewer Ingredients. Visible Difference.' against a bold sage panel."
     },
     {
@@ -53,6 +55,7 @@ const GRID_DAYS_DATA = [
         title: "Day 3 — Photographic Ritual",
         imageSrc: "/work/veyra/day3.jpg",
         label: "Day 3 — Photographic Ritual",
+        alt: "Editorial skincare routine photograph highlighting subtle morning light and glass dropper",
         caption: "An intimate, quiet photographic ritual moment — no headline text, letting the image and caption carry the story instead of an overlay."
     },
     {
@@ -60,6 +63,7 @@ const GRID_DAYS_DATA = [
         title: "Day 4 — Philosophy Statement",
         imageSrc: "/work/veyra/day4.jpg",
         label: "Day 4 — Philosophy Statement",
+        alt: "Sage green typographic card displaying Veyra philosophy 'We don't believe in twelve steps'",
         caption: "A solid sage philosophy card, type-only: 'We don't believe in twelve steps.' The one day the brand speaks without showing product at all."
     },
     {
@@ -67,6 +71,7 @@ const GRID_DAYS_DATA = [
         title: "Day 5 — Ingredient Breakdown",
         imageSrc: "/work/veyra/day5.jpg",
         label: "Day 5 — Ingredient Breakdown",
+        alt: "Ingredient breakdown layout highlighting Hyaluronic Acid, Niacinamide, and Vitamin E",
         caption: "A left-aligned typographic ingredient breakdown — Hyaluronic Acid, Niacinamide, Vitamin E — anchored by a small bottle bottom-right for trust-building."
     },
     {
@@ -74,6 +79,7 @@ const GRID_DAYS_DATA = [
         title: "Day 6 — Launch Invitation",
         imageSrc: "/work/veyra/day6.jpg",
         label: "Day 6 — Launch Invitation",
+        alt: "Launch invitation post featuring Veyra packaging and 'Yours to Keep Simple' tagline",
         caption: "A deliberate visual echo of Day 1, but shifting from introduction to invitation with 'Yours to Keep Simple' and a quiet launch CTA."
     },
     {
@@ -81,6 +87,7 @@ const GRID_DAYS_DATA = [
         title: "Day 7 — Closing Testimonial",
         imageSrc: "/work/veyra/day7.jpg",
         label: "Day 7 — Closing Testimonial",
+        alt: "Customer testimonial card in clean editorial typography on soft background",
         caption: "A closing testimonial card pairing a customer quote with the campaign's opening tagline, closing the loop from introduction to proof."
     }
 ];
@@ -322,7 +329,7 @@ export default function VeyraCaseStudy() {
                                             {card.imageSrc ? (
                                                 <Image 
                                                     src={card.imageSrc}
-                                                    alt={card.label}
+                                                    alt={card.alt}
                                                     fill
                                                     className="object-cover"
                                                     priority={card.day === 1}
@@ -365,7 +372,7 @@ export default function VeyraCaseStudy() {
                                             {card.imageSrc ? (
                                                 <Image 
                                                     src={card.imageSrc}
-                                                    alt={card.label}
+                                                    alt={card.alt}
                                                     fill
                                                     className="object-cover"
                                                 />
@@ -519,7 +526,7 @@ export default function VeyraCaseStudy() {
                                 {currentLightboxData.imageSrc ? (
                                     <Image 
                                         src={currentLightboxData.imageSrc}
-                                        alt={currentLightboxData.label}
+                                        alt={currentLightboxData.alt}
                                         fill
                                         className="object-cover"
                                         priority

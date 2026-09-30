@@ -30,6 +30,7 @@ const CATEGORIES = [
         image: "/website-design-cover.png",
         href: "/work/website-design-projects",
         bgClass: "bg-[#edeae4]",
+        alt: "Website design projects showcase cover featuring client homepage mockups",
     },
     {
         title: "Social Media Creatives",
@@ -37,6 +38,7 @@ const CATEGORIES = [
         image: "/social-media-creatives-cover.png",
         href: "/work/social-media-creatives",
         bgClass: "bg-[#f1ede4]",
+        alt: "Social media creative projects cover showcasing campaign cards and layouts",
     },
     {
         title: "Brand Identity Projects",
@@ -44,12 +46,38 @@ const CATEGORIES = [
         image: "/brand-identity-cover.png",
         href: "/work/brand-identity",
         bgClass: "bg-[#f1ede4]",
+        alt: "Brand identity projects cover illustrating typography and visual design systems",
     },
 ];
+
+const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://craftedbyhitarth.vercel.app/",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Work",
+            item: "https://craftedbyhitarth.vercel.app/work",
+        },
+    ],
+};
 
 export default function AllWorkPage() {
     return (
         <main className="min-h-screen bg-[#050505] text-white selection:bg-white/20 font-sans flex flex-col justify-between">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbJsonLd),
+                }}
+            />
             <div>
                 {/* Top Bar / Breadcrumb */}
                 <motion.div 
@@ -104,7 +132,7 @@ export default function AllWorkPage() {
                                         <div className={`relative aspect-[16/11] overflow-hidden rounded-xl mb-6 ${category.bgClass}`}>
                                             <Image 
                                                 src={category.image}
-                                                alt={`${category.title} portfolio cover`}
+                                                alt={category.alt}
                                                 fill
                                                 className="object-contain group-hover:scale-105 transition-all duration-700"
                                                 priority={index === 0}

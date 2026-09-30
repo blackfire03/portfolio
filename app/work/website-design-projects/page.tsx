@@ -84,7 +84,7 @@ export default function WebsiteDesignProjects() {
                                     <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#004aac]">
                                         <Image 
                                             src="/work/website-design-projects/quacks.jpg"
-                                            alt="Quack's 43rd Street Bakery website redesign mockup preview"
+                                            alt="Quack's 43rd Street Bakery homepage redesign mockup on blue background"
                                             fill
                                             className="object-contain p-3 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                             priority
@@ -117,7 +117,7 @@ export default function WebsiteDesignProjects() {
                                     <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#ffffff]">
                                         <Image 
                                             src="/work/website-design-projects/bloody-rose.jpg"
-                                            alt="Bloody Rose Boutique website redesign mockup preview"
+                                            alt="Bloody Rose Boutique alternative fashion eCommerce redesign mockup on white background"
                                             fill
                                             className="object-contain p-4 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                         />
@@ -149,7 +149,7 @@ export default function WebsiteDesignProjects() {
                                     <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#edeae3]">
                                         <Image 
                                             src="/work/website-design-projects/leafora.jpg"
-                                            alt="Leafora website design mockup preview"
+                                            alt="Leafora artisanal tea brand homepage design mockup with botanical typography"
                                             fill
                                             className="object-contain p-4 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                         />

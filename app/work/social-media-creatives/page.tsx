@@ -84,7 +84,7 @@ export default function SocialMediaCreatives() {
                                     <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#092701]">
                                         <Image 
                                             src="/work/ochre-oak/card_thumbnail.jpg"
-                                            alt="Ochre & Oak café social media design and mascot portfolio preview"
+                                            alt="Ochre & Oak café social media campaign featuring illustrated coffee cup mascot"
                                             fill
                                             className="object-contain p-3 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                             priority
@@ -117,7 +117,7 @@ export default function SocialMediaCreatives() {
                                     <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#ece8dc]">
                                         <Image 
                                             src="/work/veyra/logo.jpg"
-                                            alt="Veyra skincare brand identity and social media design portfolio preview"
+                                            alt="Veyra skincare minimalist logo and cosmetic bottle packaging design"
                                             fill
                                             className="object-contain p-4 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                             priority

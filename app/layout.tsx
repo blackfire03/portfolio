@@ -54,8 +54,19 @@ const personJsonLd = {
         "https://www.instagram.com/craftedbyhitarth/",
         "https://x.com/crafthitarth03",
         "https://github.com/blackfire03",
-        "https://craftedbyhitarth.vercel.app",
     ],
+};
+
+const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Hitarth Nayak",
+    url: "https://craftedbyhitarth.vercel.app/",
+    description: "Portfolio of Hitarth Nayak, a UI/UX and graphic designer specializing in accessible digital experiences, design systems, and brand identities.",
+    author: {
+        "@type": "Person",
+        name: "Hitarth Nayak",
+    },
 };
 
 export default function RootLayout({
@@ -81,6 +92,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(personJsonLd),
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(websiteJsonLd),
                     }}
                 />
                 <link rel="icon" href="/favicon.ico" sizes="any" />

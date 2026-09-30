@@ -28,10 +28,76 @@ export const metadata: Metadata = {
     },
 };
 
+const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://craftedbyhitarth.vercel.app/",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Work",
+            item: "https://craftedbyhitarth.vercel.app/work",
+        },
+        {
+            "@type": "ListItem",
+            position: 3,
+            name: "Social Media Creatives",
+            item: "https://craftedbyhitarth.vercel.app/work/social-media-creatives",
+        },
+        {
+            "@type": "ListItem",
+            position: 4,
+            name: "Veyra",
+            item: "https://craftedbyhitarth.vercel.app/work/veyra",
+        },
+    ],
+};
+
+const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: "Veyra — Skincare Brand & Social Media Content Design",
+    headline: "Veyra Skincare Brand & Social Media Content Design",
+    description: "A 7-day social media launch campaign for Veyra skincare by Hitarth Nayak, emphasizing quiet luxury, editorial typography, and high negative space.",
+    url: "https://craftedbyhitarth.vercel.app/work/veyra",
+    image: "https://craftedbyhitarth.vercel.app/work/veyra/logo.jpg",
+    creator: {
+        "@type": "Person",
+        name: "Hitarth Nayak",
+        url: "https://craftedbyhitarth.vercel.app/",
+    },
+    about: {
+        "@type": "Thing",
+        name: "Veyra Clean Skincare 7-Day Social Media Launch Campaign",
+    },
+};
+
 export default function VeyraLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return <>{children}</>;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbJsonLd),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(creativeWorkJsonLd),
+                }}
+            />
+            {children}
+        </>
+    );
 }

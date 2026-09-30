@@ -54,6 +54,7 @@ const GRID_DAYS_DATA = [
             {
                 imageSrc: "/work/ochre-oak/day1.jpg",
                 label: "Day 1 — Brand Intro",
+                alt: "Ochre & Oak brand introduction Instagram post featuring the custom coffee mascot on warm earthy background",
                 caption: "Brand intro post introducing the Ochre & Oak mascot for the first time. A bold text-on-color card that sets the tone for the whole feed."
             }
         ]
@@ -66,26 +67,31 @@ const GRID_DAYS_DATA = [
             {
                 imageSrc: "/work/ochre-oak/day2-slide1.jpg",
                 label: "Day 2 — Slide 1 of 5 (Grown)",
+                alt: "Bean-to-cup carousel slide 1 showing coffee farming and growth origin with circular badge icon",
                 caption: "A five-step bean-to-cup carousel using a matching icon-badge template per slide. Turns the coffee-making process into a satisfying swipe-through story."
             },
             {
                 imageSrc: "/work/ochre-oak/day2-slide2.jpg",
                 label: "Day 2 — Slide 2 of 5 (Roasted)",
+                alt: "Bean-to-cup carousel slide 2 illustrating the artisan coffee roasting stage with badge template",
                 caption: "Detailed view of the roasting phase with consistent badge positioning across the slide sequence."
             },
             {
                 imageSrc: "/work/ochre-oak/day2-slide3.jpg",
                 label: "Day 2 — Slide 3 of 5 (Ground)",
+                alt: "Bean-to-cup carousel slide 3 highlighting single-origin coffee grinding precision and texture",
                 caption: "Highlighting single-origin grinding precision and grind size notes."
             },
             {
                 imageSrc: "/work/ochre-oak/day2-slide4.jpg",
                 label: "Day 2 — Slide 4 of 5 (Brewed)",
+                alt: "Bean-to-cup carousel slide 4 showcasing pour-over coffee brewing in warm natural lighting",
                 caption: "Showcasing pour-over brewing art with warm natural lighting."
             },
             {
                 imageSrc: "/work/ochre-oak/day2-slide5.jpg",
                 label: "Day 2 — Slide 5 of 5 (Poured)",
+                alt: "Bean-to-cup carousel slide 5 showing fresh coffee poured into a handcrafted ceramic cup",
                 caption: "The final pour into a handcrafted ceramic cup, completing the bean-to-cup journey."
             }
         ]
@@ -98,6 +104,7 @@ const GRID_DAYS_DATA = [
             {
                 imageSrc: "/work/ochre-oak/day3.jpg",
                 label: "Day 3 — Featured Drink",
+                alt: "Featured drink Instagram post for the Ochre Latte with condensation-beaded glass and corner mascot",
                 caption: "Featured drink post for the Ochre Latte. A clean, condensation-beaded product shot kept product-forward, with the mascot tucked quietly into the corner."
             }
         ]
@@ -110,21 +117,25 @@ const GRID_DAYS_DATA = [
             {
                 imageSrc: "/work/ochre-oak/day4-slide1.jpg",
                 label: "Day 4 — Slide 1 of 4 (Title)",
+                alt: "Ways to enjoy your coffee carousel title slide with consistent Ochre & Oak badge branding",
                 caption: "A 'ways to enjoy your coffee' carousel using the same badge-and-caption template as Day 2, so the two carousels read as siblings."
             },
             {
                 imageSrc: "/work/ochre-oak/day4-slide2.jpg",
                 label: "Day 4 — Slide 2 of 4 (Hot)",
+                alt: "Ways to enjoy coffee slide 2 featuring hot espresso poured over steamed oat milk",
                 caption: "Highlighting rich espresso poured over perfectly steamed oat milk."
             },
             {
                 imageSrc: "/work/ochre-oak/day4-slide3.jpg",
                 label: "Day 4 — Slide 3 of 4 (Iced)",
+                alt: "Ways to enjoy coffee slide 3 showing refreshing Japanese-style cold brew over clear ice cubes",
                 caption: "Refreshing Japanese-style cold brew served over artisanal clear ice cubes."
             },
             {
                 imageSrc: "/work/ochre-oak/day4-slide4.jpg",
                 label: "Day 4 — Slide 4 of 4 (To-Go)",
+                alt: "Ways to enjoy coffee slide 4 showcasing eco-friendly takeaway cup styled for commutes",
                 caption: "Eco-friendly takeaway cup styled for morning commutes and slow strolls."
             }
         ]
@@ -137,6 +148,7 @@ const GRID_DAYS_DATA = [
             {
                 imageSrc: "/work/ochre-oak/day5.jpg",
                 label: "Day 5 — Moody Interior",
+                alt: "Moody illustrated café window scene on a rainy morning with Ochre & Oak mascot seated at the table",
                 caption: "A moody, illustrated café-window scene with a miniature mascot seated at the table — turning a cozy stock mood into a scene that's unmistakably Ochre & Oak."
             }
         ]
@@ -149,6 +161,7 @@ const GRID_DAYS_DATA = [
             {
                 imageSrc: "/work/ochre-oak/day6.jpg",
                 label: "Day 6 — Coffee & Pastry Pairing",
+                alt: "Flat lay product photo pairing specialty coffee and fresh pastry with hand-drawn callouts",
                 caption: "A pairing post for coffee and pastry, styled as a flat lay with hand-drawn callouts — appetite appeal handled through product photography rather than heavy graphic styling."
             }
         ]
@@ -161,6 +174,7 @@ const GRID_DAYS_DATA = [
             {
                 imageSrc: "/work/ochre-oak/day7.jpg",
                 label: "Day 7 — Weekend CTA",
+                alt: "Weekend call-to-action Instagram post showcasing branded Ochre & Oak takeaway cup with foil sticker mascot",
                 caption: "Weekend CTA post featuring a real to-go cup branded with the mascot as a foil sticker — the one post where the mascot moves off the screen and onto the physical product."
             }
         ]
@@ -428,7 +442,7 @@ export default function OchreAndOakCaseStudy() {
                                                 {activeSlide.imageSrc ? (
                                                     <Image 
                                                         src={activeSlide.imageSrc}
-                                                        alt={activeSlide.label}
+                                                        alt={activeSlide.alt || activeSlide.label}
                                                         fill
                                                         className="object-cover"
                                                         priority={card.day === 1}
@@ -499,7 +513,7 @@ export default function OchreAndOakCaseStudy() {
                                                 {activeSlide.imageSrc ? (
                                                     <Image 
                                                         src={activeSlide.imageSrc}
-                                                        alt={activeSlide.label}
+                                                        alt={activeSlide.alt || activeSlide.label}
                                                         fill
                                                         className="object-cover"
                                                     />
@@ -654,7 +668,7 @@ export default function OchreAndOakCaseStudy() {
                                 {currentLightboxData.slides[currentLightboxSlideIndex].imageSrc ? (
                                     <Image 
                                         src={currentLightboxData.slides[currentLightboxSlideIndex].imageSrc!}
-                                        alt={currentLightboxData.slides[currentLightboxSlideIndex].label}
+                                        alt={currentLightboxData.slides[currentLightboxSlideIndex].alt || currentLightboxData.slides[currentLightboxSlideIndex].label}
                                         fill
                                         className="object-cover"
                                         priority
