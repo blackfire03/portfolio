@@ -62,7 +62,7 @@ export default function TermsAndConditions() {
                 <li><strong className="text-zinc-200 font-medium">Service</strong> — refers to the Website.</li>
                 <li><strong className="text-zinc-200 font-medium">Terms and Conditions</strong> — also referred to as "Terms"; means these Terms and Conditions which govern Your access to and use of the Service and form the entire agreement between You and the Company regarding the Service.</li>
                 <li><strong className="text-zinc-200 font-medium">Third-Party Social Media Service</strong> — any services or content provided by a third party that is displayed, included, made available, or linked to through the Service.</li>
-                <li><strong className="text-zinc-200 font-medium">Website</strong> — refers to Hitarth Nayak's portfolio, accessible from hitarthnayak.com</li>
+                <li><strong className="text-zinc-200 font-medium">Website</strong> — refers to Hitarth Nayak's portfolio, accessible from https://craftedbyhitarth.vercel.app/</li>
                 <li><strong className="text-zinc-200 font-medium">You</strong> — the individual accessing or using the Service, or the company or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
               </ul>
             </div>
@@ -108,7 +108,7 @@ export default function TermsAndConditions() {
               <h3 className="text-xl text-white font-medium mb-3">Content Sharing</h3>
               <p className="mb-4">You are permitted to share content from this Service freely — including across social media, personal websites, blogs, and other platforms — provided that:</p>
               <ul className="list-disc pl-6 space-y-3 text-zinc-400 mb-4">
-                <li>You provide clear attribution to Hitarth Nayak and, where possible, include a link back to hitarthnayak.com as the original source.</li>
+                <li>You provide clear attribution to Hitarth Nayak and, where possible, include a link back to https://craftedbyhitarth.vercel.app/ as the original source.</li>
                 <li>Content is not used for commercial purposes, altered in a way that misrepresents the original work, or presented in a manner that implies endorsement or affiliation with the Company without prior written consent.</li>
               </ul>
               <p>The Company reserves the right to revoke sharing permissions for specific content at its sole discretion by providing reasonable notice.</p>

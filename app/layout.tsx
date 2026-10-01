@@ -48,12 +48,31 @@ const personJsonLd = {
     "@type": "Person",
     name: "Hitarth Nayak",
     jobTitle: "UI/UX & Graphic Designer",
-    url: "https://craftedbyhitarth.vercel.app",
+    url: "https://craftedbyhitarth.vercel.app/",
+    description: "Hitarth Nayak is an independent UI/UX and graphic designer specializing in brand identity, digital experiences, websites, and visual design.",
     sameAs: [
         "https://in.linkedin.com/in/hitarth-n-268316304",
         "https://www.instagram.com/craftedbyhitarth/",
         "https://x.com/crafthitarth03",
         "https://github.com/blackfire03",
+        "https://medium.com/@hitarthnayak",
+    ],
+    knowsAbout: [
+        "UI/UX Design",
+        "Graphic Design",
+        "Brand Identity",
+        "Design Systems",
+        "Web Design",
+    ],
+    alumniOf: [
+        {
+            "@type": "EducationalOrganization",
+            name: "Red and White Multimedia Education",
+        },
+        {
+            "@type": "EducationalOrganization",
+            name: "Pravin Patil Polytechnic",
+        },
     ],
 };
 
