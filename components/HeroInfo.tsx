@@ -85,9 +85,9 @@ export function HeroInfo() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mt-20 md:mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-end mt-20 md:mt-0">
                     {/* Bio Section (Bottom Left) */}
-                    <div className="lg:col-span-4 xl:col-span-3 max-w-md">
+                    <div className="max-w-md">
                         <div className="text-[0.85rem] text-zinc-400 mb-4 font-medium flex items-center gap-2">
                             <span className={isOnline() ? "text-[#4ade80]" : "text-red-500"}>
                                 ({isOnline() ? "Online" : "Offline"})
@@ -100,22 +100,22 @@ export function HeroInfo() {
                             building digital products that translate into accessible
                             and functional experiences.
                         </p>
-                        <div className="flex items-center gap-4">
+                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-4">
                             <Link
                                 href="/contact"
                                 onClick={() => {
                                     sendGAEvent("event", "cta_work_together");
                                 }}
-                                className="bg-white text-black px-6 py-2.5 rounded-full text-[0.9rem] font-bold hover:bg-zinc-200 transition-all flex items-center justify-center cursor-pointer"
+                                className="bg-white text-black px-6 py-2.5 rounded-full text-[0.9rem] font-bold hover:bg-zinc-200 transition-all flex items-center justify-center cursor-pointer whitespace-nowrap"
                             >
                                 Let&apos;s Work Together
                             </Link>
-                            <Link 
+                            <Link
                                 href="/work"
                                 onClick={() => {
                                     sendGAEvent("event", "cta_view_all_work");
                                 }}
-                                className="text-zinc-400 border border-white/10 hover:border-white/20 hover:text-white px-6 py-2.5 rounded-full text-[0.9rem] font-medium transition-all flex items-center gap-2 cursor-pointer"
+                                className="text-zinc-400 border border-white/10 hover:border-white/20 hover:text-white px-6 py-2.5 rounded-full text-[0.9rem] font-medium transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap"
                             >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View All Work
                             </Link>
@@ -123,20 +123,20 @@ export function HeroInfo() {
                     </div>
 
                     {/* Case Studies Section (Bottom Right) */}
-                    <div className="lg:col-span-8 xl:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
                         {/* Case Study 1: Website Design Projects */}
                         <div className="group">
-                            <Link 
-                                href="/work/website-design-projects" 
+                            <Link
+                                href="/work/website-design-projects"
                                 onClick={() => sendGAEvent("event", "cta_view_projects")}
                                 className="block"
                             >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#edeae4]">
-                                    <Image 
+                                    <Image
                                         src="/website-design-cover.png"
                                         alt="Website design projects portfolio cover preview"
                                         fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                         className="object-contain group-hover:scale-105 transition-all duration-700"
                                     />
                                 </div>
@@ -147,8 +147,8 @@ export function HeroInfo() {
                             <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Turning complex ideas into simple, elegant websites built for usability and impact.
                             </p>
-                            <Link 
-                                href="/work/website-design-projects" 
+                            <Link
+                                href="/work/website-design-projects"
                                 onClick={() => sendGAEvent("event", "cta_view_projects")}
                                 aria-label="View Website Design Projects"
                                 className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
@@ -159,17 +159,17 @@ export function HeroInfo() {
 
                         {/* Case Study 2: Social Media Creatives */}
                         <div className="group">
-                            <Link 
-                                href="/work/social-media-creatives" 
+                            <Link
+                                href="/work/social-media-creatives"
                                 onClick={() => sendGAEvent("event", "cta_view_projects")}
                                 className="block"
                             >
                                 <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#f1ede4]">
-                                    <Image 
+                                    <Image
                                         src="/social-media-creatives-cover.png"
                                         alt="Social media creative projects portfolio cover preview"
                                         fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                         className="object-contain group-hover:scale-105 transition-all duration-700"
                                     />
                                 </div>
@@ -180,43 +180,10 @@ export function HeroInfo() {
                             <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
                                 Scroll-stopping single posts and carousels designed to inform, engage, and build brand presence.
                             </p>
-                            <Link 
-                                href="/work/social-media-creatives" 
+                            <Link
+                                href="/work/social-media-creatives"
                                 onClick={() => sendGAEvent("event", "cta_view_projects")}
                                 aria-label="View Social Media Creatives Projects"
-                                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
-                            >
-                                <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects
-                            </Link>
-                        </div>
-
-                        {/* Case Study 3: Brand Identity Projects */}
-                        <div className="group">
-                            <Link
-                                href="/work/brand-identity"
-                                onClick={() => sendGAEvent("event", "cta_view_projects")}
-                                className="block"
-                            >
-                                <div className="relative aspect-[16/11] overflow-hidden rounded-xl mb-6 bg-[#f1ede4]">
-                                    <Image
-                                        src="/brand-identity-cover.png"
-                                        alt="Brand identity projects portfolio cover preview"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-contain group-hover:scale-105 transition-all duration-700"
-                                    />
-                                </div>
-                                <h3 className="text-[1.1rem] font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">
-                                    Brand Identity Projects
-                                </h3>
-                            </Link>
-                            <p className="text-zinc-400 text-[0.85rem] font-light leading-relaxed mb-4 line-clamp-2">
-                                Building cohesive brand identities — logos, color systems, and visual guidelines that stick.
-                            </p>
-                            <Link
-                                href="/work/brand-identity"
-                                onClick={() => sendGAEvent("event", "cta_view_projects")}
-                                aria-label="View Brand Identity Projects"
                                 className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-zinc-400 group-hover:text-white transition-all"
                             >
                                 <ArrowRight className="w-4 h-4 rotate-[-45deg]" /> View Projects
