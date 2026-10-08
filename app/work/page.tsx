@@ -6,6 +6,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { sendGAEvent } from "@/lib/analytics";
 
+import { Footer } from "@/components/Footer";
+
 const fadeIn = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -47,6 +49,34 @@ const CATEGORIES = [
         href: "/work/brand-identity",
         bgClass: "bg-[#f1ede4]",
         alt: "Brand identity projects cover illustrating typography and visual design systems",
+    },
+];
+
+const FEATURED_CASE_STUDIES = [
+    {
+        title: "Quack's 43rd Street Bakery",
+        category: "Website Design",
+        href: "/work/quacks-bakery",
+    },
+    {
+        title: "Bloody Rose Boutique",
+        category: "Website Design",
+        href: "/work/bloody-rose",
+    },
+    {
+        title: "Leafora",
+        category: "Website Design",
+        href: "/work/leafora",
+    },
+    {
+        title: "Ochre & Oak",
+        category: "Social Media Creatives",
+        href: "/work/ochre-and-oak",
+    },
+    {
+        title: "Veyra",
+        category: "Social Media Creatives",
+        href: "/work/veyra",
     },
 ];
 
@@ -159,27 +189,44 @@ export default function AllWorkPage() {
                             </motion.div>
                         ))}
                     </motion.div>
+
+                    {/* Featured Case Studies Section */}
+                    <div className="mt-20 pt-16 border-t border-white/10">
+                        <div className="mb-8">
+                            <span className="block text-[13px] font-semibold text-[#9a9ba3] tracking-[0.14em] uppercase mb-2">
+                                IN-DEPTH WORK
+                            </span>
+                            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+                                Featured Case Studies
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                            {FEATURED_CASE_STUDIES.map((project, idx) => (
+                                <Link
+                                    key={idx}
+                                    href={project.href}
+                                    className="group p-5 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-white/20 hover:bg-zinc-900/70 transition-all flex flex-col justify-between space-y-4"
+                                >
+                                    <div className="space-y-1.5">
+                                        <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider block">
+                                            {project.category}
+                                        </span>
+                                        <h3 className="text-base font-semibold text-white group-hover:text-zinc-200 transition-colors">
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                    <div className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 group-hover:text-white transition-colors">
+                                        Read Case Study <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </section>
             </div>
 
-            {/* Footer */}
-            <footer className="border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 w-full mt-20">
-                <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-sm font-light">
-                    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-                        <p>© {new Date().getFullYear()} Hitarth Nayak. All rights reserved.</p>
-                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
-                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <span className="hidden md:inline text-white/20" aria-hidden="true">|</span>
-                        <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
-                    </div>
-                    <div className="flex gap-6">
-                        <a href="https://www.instagram.com/craftedbyhitarth/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
-                        <a href="https://x.com/crafthitarth03" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
-                        <a href="https://in.linkedin.com/in/hitarth-n-268316304" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-                        <a href="https://github.com/blackfire03" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
-                    </div>
-                </div>
-            </footer>
+            <Footer maxWidth="max-w-[100rem]" className="w-full mt-20" />
         </main>
     );
 }
