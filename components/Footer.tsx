@@ -5,7 +5,7 @@ interface FooterProps {
     className?: string;
 }
 
-export function Footer({ maxWidth = "max-w-7xl", className = "" }: FooterProps) {
+export function Footer({ maxWidth = "max-w-[95rem]", className = "" }: FooterProps) {
     return (
         <footer className={`border-t border-white/10 bg-[#121212] py-12 px-6 md:px-12 lg:px-24 ${className}`}>
             <div className={`${maxWidth} mx-auto grid grid-cols-1 xl:grid-cols-[1fr_auto_1fr] items-center gap-6 xl:gap-8 text-zinc-400 text-sm font-light`}>
