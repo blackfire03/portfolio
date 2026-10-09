@@ -39,7 +39,7 @@ export default function TermsAndConditions() {
         </Link>
         
         <h1 className="text-4xl text-white font-medium mb-4">Terms and Conditions</h1>
-        <p className="text-zinc-400 mb-12">Last updated: March 17, 2026</p>
+        <p className="text-zinc-400 mb-12">Last updated: October 9, 2026</p>
 
         <div className="space-y-12 leading-relaxed">
           {/* Interpretation and Definitions */}
@@ -206,7 +206,7 @@ export default function TermsAndConditions() {
               <p className="mb-4">If you have any questions about these Terms and Conditions, You can contact us:</p>
               <ul className="list-disc pl-6 space-y-3 text-zinc-400">
                 <li><strong className="text-zinc-200">By email:</strong> <a href="mailto:freelancing.hitarth@gmail.com" className="hover:text-white transition-colors underline decoration-white/20 underline-offset-4">freelancing.hitarth@gmail.com</a></li>
-                <li><strong className="text-zinc-200">By visiting this page on our website:</strong> <span className="italic">COMING SOON!</span></li>
+                <li><strong className="text-zinc-200">By visiting our website:</strong> <Link href="/" className="hover:text-white transition-colors underline decoration-white/20 underline-offset-4">https://craftedbyhitarth.vercel.app/</Link></li>
               </ul>
             </div>
           </section>
