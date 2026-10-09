@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -96,6 +97,26 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
+                {/* Google Consent Mode v2 Default Setup */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+
+var savedConsent = null;
+try {
+    savedConsent = localStorage.getItem('portfolio_cookie_consent');
+} catch (e) {}
+
+gtag('consent', 'default', {
+    'analytics_storage': savedConsent === 'all' ? 'granted' : 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+});`,
+                    }}
+                />
                 {/* Google Tag Manager */}
                 <script
                     dangerouslySetInnerHTML={{
@@ -135,6 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </noscript>
                 {/* End Google Tag Manager (noscript) */}
                 {children}
+                <CookieBanner />
             </body>
         </html>
     );
